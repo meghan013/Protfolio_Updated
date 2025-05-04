@@ -456,10 +456,9 @@
     color: white;
     border-color: var(--primary);
 }
-
 .certificates-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Match project layout */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -495,53 +494,63 @@
     opacity: 0.1;
 }
 
-        .certificate-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+.certificate-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
-        .certificate-content {
-            padding: 1.5rem;
-        }
+.certificate-card:hover .certificate-img {
+    transform: scale(1.05);
+}
 
-        .certificate-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
+.certificate-content {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2; /* ensures content is above hover overlay */
+}
 
-        .certificate-content p {
-            margin-bottom: 1rem;
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
+.certificate-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
 
-        .certificate-links {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
+.certificate-content p {
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
 
-        .certificate-link,
-        .view-btn {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.certificate-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
-        .certificate-link:hover,
-        .view-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
+.certificate-link,
+.view-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--primary);
+    color: white;
+}
+
+.certificate-link:hover,
+.view-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
 
         /* Modal styles */
         /* Modal background */
